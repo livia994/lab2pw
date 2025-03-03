@@ -142,6 +142,15 @@
 <div class="cookie-mascot">
     <div class="mascot-message">Hi there! Want to try our freshly baked cookies?</div>
     <svg viewBox="0 0 100 100" class="mascot-svg">
+        <defs>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#AA8E69" flood-opacity="0.5"/>
+            </filter>
+            <filter id="chipShadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.7"/>
+            </filter>
+        </defs>
+        
         <circle cx="50" cy="50" r="40" fill="#D2B48C" />
         
         <circle cx="30" cy="40" r="5" fill="#8B4513" />
