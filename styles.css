@@ -335,6 +335,25 @@ header {
 .cookie-mascot.visible {
     right: 30px;
     opacity: 1;
+    animation: moveIn 0.6s ease-out, bounce 3s infinite alternate; 
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes moveIn {
+    0% {
+        right: -200px;
+    }
+    100% {
+        right: 30px;
+    }
 }
 
 .mascot-svg {
@@ -343,22 +362,48 @@ header {
     cursor: pointer;
     filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
     will-change: transform;
-    animation: bounce 3s infinite alternate, rotate 12s infinite linear;
+    animation: bounce 3s infinite alternate, rotate-cookie 12s infinite linear;
 }
 
-.mascot-svg circle[fill="#D2B48C"] {
-    filter: url(#shadow);
-    transition: all 0.3s ease;
+@keyframes rotate-cookie {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg); /* Half rotation */
+    }
+    100% {
+        transform: rotate(360deg); /* Full rotation */
+    }
 }
-
-.cookie-mascot:hover .mascot-svg circle[fill="#D2B48C"] {
-    fill: #E6C599; 
-}
-
 
 .mascot-svg circle[fill="#8B4513"] {
     filter: url(#chipShadow);
+    transition: transform 0.3s ease;
 }
+
+
+.cookie-mascot:hover .mascot-svg {
+    transform: scale(1.1); /* Slight scale up */
+    animation: bounce 0.5s ease-out; /* Shortened bounce on hover */
+}
+
+@keyframes popMessage {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mascot-message {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
 
 .mascot-message {
     background-color: white;
@@ -389,30 +434,6 @@ header {
 .cookie-mascot:hover .mascot-message {
     opacity: 1;
     transform: translateY(0);
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(5deg);
-    }
-    75% {
-        transform: rotate(-5deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
 }
 
 
