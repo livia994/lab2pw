@@ -11,7 +11,10 @@
     <header>
         <nav>
             <div class="logo">Sweet Delights</div>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="cookie-bite"></div>
+            </div>
+            <ul class="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#special-offers">Special Offers</a></li>
@@ -100,6 +103,15 @@
     <footer>
         <p>&copy; 2025 Sweet Delights Cookies. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+    
 </body>
 </html>
 
