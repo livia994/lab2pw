@@ -25,9 +25,15 @@ https://livia994.github.io/lab2pw/
 ![image](https://github.com/user-attachments/assets/8bb8a143-b950-4824-8dfb-f5e38fac2cd7)
 
 ## Screenshots with my mascot and Mobile Screen Only Improvements
-Cookie-Mascot with message
+
+- Cookie-Mascot with message
+
 ![image](image-1.png)
-Hidden Menu for Mobile Screen Only
+
+- Hidden Menu for Mobile Screen Only
+
 ![image](image-2.png)
-Quick Order Selection for Mobile Only
+
+- Quick Order Selection for Mobile Only
+
 ![image](image-3.png)
