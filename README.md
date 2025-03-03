@@ -12,6 +12,9 @@ A responsive and visually appealing landing page designed for "Sweet Delights Co
 - Mobile-friendly toggle menu to conveniently hide navigation options on smaller screens
 - Quick order selection button, exclusive to mobile screens, for faster and more accessible purchases
 
+## Live Demo
+
+https://youtu.be/vdWgj-Vu82E
 
 ## Live link on github
 
