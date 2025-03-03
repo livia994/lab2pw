@@ -97,6 +97,7 @@ nav a:hover {
     border-radius: 30px;
     margin-top: 2rem;
     transition: background-color 0.3s;
+    font-weight: bold;
 }
 
 .cta-button:hover {
@@ -131,6 +132,11 @@ h2 {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cookie-card:hover {
+    transform: translateY(-5px);
 }
 
 .cookie-image {
@@ -290,5 +296,42 @@ footer {
     
     .nav-menu li {
         padding: 15px 0;
+    }
+     
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    /* Sections */
+    section {
+        padding: 3rem 1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cookie-grid, .offer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .cookie-image {
+        height: 150px;
     }
 }
