@@ -21,7 +21,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 101;
 }
 
 nav {
@@ -106,6 +106,36 @@ nav a:hover {
 }
 .cta-button:hover {
     background-color: var(--primary-color);
+}
+
+#about {
+    padding: 5rem 3rem; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#about h2 {
+    font-size: 3.5rem; 
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.about-content {
+    max-width: 900px; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.4rem; 
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+
+#products h2 {
+    font-size: 3.5rem; 
 }
 
 /* Sections */
@@ -250,7 +280,7 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
 }
-
+/* Menu Toggle & Cookie-bite icon & quick order selection only for Mobile screens */
 .menu-toggle {
     display: none;
     width: 35px;
@@ -318,6 +348,7 @@ footer {
     font-size: 1.5rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+/* Cookie-Mascot  */
 .cookie-mascot {
     position: fixed;
     bottom: 40px;
@@ -329,13 +360,13 @@ footer {
     opacity: 0;
     will-change: opacity, right;
 }
-header {
-    z-index: 101; 
-}
+
 .cookie-mascot.visible {
     right: 30px;
     opacity: 1;
-    animation: moveIn 0.6s ease-out, bounce 3s infinite alternate; 
+    animation: 
+        moveIn 0.6s ease-out,
+        bounce 3s 0.6s infinite alternate; 
 }
 
 @keyframes bounce {
@@ -400,12 +431,6 @@ header {
 }
 
 .mascot-message {
-    opacity: 0;
-    transform: translateY(10px);
-}
-
-
-.mascot-message {
     background-color: white;
     padding: 15px 20px;
     border-radius: 15px;
@@ -434,10 +459,87 @@ header {
 .cookie-mascot:hover .mascot-message {
     opacity: 1;
     transform: translateY(0);
+    animation: wiggle 0.6s ease-in-out;
 }
 
+@keyframes spinAndGlow {
+    0% {
+        transform: rotate(0deg);
+        filter: drop-shadow(0 0 3px rgba(210, 105, 30, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(210, 105, 30, 0.6));
+    }
+    100% {
+        transform: rotate(360deg);
+        filter: drop-shadow(0 0 3px rgba(210, 105, 30, 0.3));
+    }
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.cookie-mascot svg {
+    width: 260px;
+    height: 290px;
+    cursor: pointer;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s ease;
+}
+
+.cookie-mascot:hover svg {
+    transform: scale(1.1);
+    animation: none;
+}
+.cookie-mascot.clicked svg {
+    animation: spinAndGlow 4s 1 linear;
+}
+
+.cookie-mascot:hover svg circle[fill="#593016"] {
+    animation: pop 0.4s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cookie-mascot, .cookie-mascot.visible {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .mascot-svg, .cookie-mascot svg, .cookie-mascot:hover svg {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .cookie-image img:hover, .offer-card img:hover {
+        transform: none !important;
+    }
+    
+    .cookie-card:hover {
+        transform: none !important;
+    }
+}
 
 @media (max-width: 768px) {
+
+    #about h2, #products h2 {
+        font-size: 2.8rem;
+    }
+    
+    .about-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
     .menu-toggle {
         display: block;
     }
@@ -507,21 +609,30 @@ header {
         right: 10px;
     }
     
-    .mascot-svg {
-        width: 140px;
-        height: 140px;
+    .cookie-mascot svg {
+        width: 140px; 
+        height: 155px;
     }
 
     .mascot-message {
         max-width: 150px;
         font-size: 0.9rem;
+        padding: 10px 15px;
     }
-    
 }
+    
 
 @media (max-width: 480px) {
     .hero-content h1 {
         font-size: 1.5rem;
+    }
+
+    #about h2, #products h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-content p {
+        font-size: 1.1rem;
     }
     
     .cookie-image {
@@ -531,20 +642,14 @@ header {
     .quick-order-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .cookie-mascot svg {
+        width: 100px;
+        height: 110px;
+    }
+    
+    .mascot-message {
+        max-width: 120px;
+        font-size: 0.8rem;
+    }
 }
 
-@media (max-height: 500px) {
-    #hero {
-        height: auto;
-        min-height: 100vh;
-    }
-    
-    .cookie-mascot {
-        bottom: 5px;
-    }
-    
-    .mascot-svg {
-        width: 50px;
-        height: 50px;
-    }
-}
