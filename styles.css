@@ -99,7 +99,11 @@ nav a:hover {
     transition: background-color 0.3s;
     font-weight: bold;
 }
-
+.cta-button {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 .cta-button:hover {
     background-color: var(--primary-color);
 }
@@ -168,6 +172,9 @@ h2 {
 
 .order-button:hover {
     background-color: var(--primary-color);
+}
+.order-button, .submit-button {
+    font-weight: bold;
 }
 
 /* Special Offers Section */
@@ -320,8 +327,11 @@ footer {
     align-items: center;
     transition: all 0.5s ease;
     opacity: 0;
+    will-change: opacity, right;
 }
-
+header {
+    z-index: 101; 
+}
 .cookie-mascot.visible {
     right: 20px;
     opacity: 1;
@@ -332,9 +342,7 @@ footer {
     height: 80px;
     cursor: pointer;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-}
-
-.mascot-svg {
+    will-change: transform;
     animation: bounce 2s infinite alternate, rotate 10s infinite linear;
 }
 
@@ -466,7 +474,7 @@ footer {
         width: 60px;
         height: 60px;
     }
-    
+
     .mascot-message {
         max-width: 150px;
         font-size: 0.9rem;
@@ -485,5 +493,21 @@ footer {
 
     .quick-order-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-height: 500px) {
+    #hero {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .cookie-mascot {
+        bottom: 5px;
+    }
+    
+    .mascot-svg {
+        width: 50px;
+        height: 50px;
     }
 }
