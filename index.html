@@ -141,29 +141,57 @@
 
 <div class="cookie-mascot">
     <div class="mascot-message">Hi there! Want to try our freshly baked cookies?</div>
-    <svg viewBox="0 0 100 100" class="mascot-svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="300" height="330">
         <defs>
-            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#AA8E69" flood-opacity="0.5"/>
+            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#5e2c04" flood-opacity="0.6"/>
             </filter>
-            <filter id="chipShadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.7"/>
+            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
             </filter>
+            <radialGradient id="cookieGradient" cx="50%" cy="50%" r="50%" fx="40%" fy="40%">
+                <stop offset="0%" style="stop-color:#f0ad62"/>
+                <stop offset="80%" style="stop-color:#d18c37"/>
+                <stop offset="100%" style="stop-color:#b37729"/>
+            </radialGradient>
+            <linearGradient id="shoeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#f44336"/>
+                <stop offset="100%" style="stop-color:#b71c1c"/>
+            </linearGradient>
         </defs>
         
-        <circle cx="50" cy="50" r="40" fill="#D2B48C" />
+        <circle cx="100" cy="100" r="65" fill="url(#cookieGradient)" stroke="#8B4513" stroke-width="6" filter="url(#shadow)"/>
         
-        <circle cx="30" cy="40" r="5" fill="#8B4513" />
-        <circle cx="60" cy="30" r="6" fill="#8B4513" />
-        <circle cx="40" cy="65" r="5" fill="#8B4513" />
-        <circle cx="70" cy="60" r="4" fill="#8B4513" />
-        <circle cx="55" cy="50" r="4" fill="#8B4513" />
-        <circle cx="35" cy="35" r="5" fill="white" />
-        <circle cx="65" cy="35" r="5" fill="white" />
-        <circle cx="35" cy="35" r="2" fill="black" />
-        <circle cx="65" cy="35" r="2" fill="black" />
+        <circle cx="100" cy="100" r="63" fill="none" stroke="#c97d29" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
         
-        <path d="M 35 55 Q 50 70 65 55" stroke="black" stroke-width="2" fill="none" />
+        <circle cx="80" cy="60" r="8" fill="#593016" stroke="#3e1c02" stroke-width="1"/>
+        <circle cx="125" cy="70" r="7" fill="#593016" stroke="#3e1c02" stroke-width="1"/>
+        <circle cx="140" cy="110" r="5" fill="#593016" stroke="#3e1c02" stroke-width="1"/>
+        <circle cx="60" cy="120" r="6" fill="#593016" stroke="#3e1c02" stroke-width="1"/>
+        <circle cx="110" cy="135" r="7" fill="#593016" stroke="#3e1c02" stroke-width="1"/>
+        <circle cx="75" cy="90" r="5" fill="#593016" stroke="#3e1c02" stroke-width="1"/>
+        
+        <circle cx="78" cy="58" r="2" fill="#8B4513" opacity="0.6"/>
+        <circle cx="123" cy="68" r="2" fill="#8B4513" opacity="0.6"/>
+        <circle cx="58" cy="118" r="1.5" fill="#8B4513" opacity="0.6"/>
+        
+        <ellipse cx="80" cy="95" rx="12" ry="16" fill="#FFFFFF" stroke="#3e1c02" stroke-width="1.5"/>
+        <ellipse cx="120" cy="95" rx="12" ry="16" fill="#FFFFFF" stroke="#3e1c02" stroke-width="1.5"/>
+        
+        <ellipse cx="80" cy="95" rx="7" ry="10" fill="#3e1c02"/>
+        <ellipse cx="120" cy="95" rx="7" ry="10" fill="#3e1c02"/>
+        
+        <ellipse cx="78" cy="92" rx="2.5" ry="3.5" fill="#FFFFFF"/>
+        <ellipse cx="118" cy="92" rx="2.5" ry="3.5" fill="#FFFFFF"/>
+        
+        <circle cx="100" cy="115" r="6.5" fill="#f44336" stroke="#b71c1c" stroke-width="1"/>
+        <circle cx="98" cy="113" r="2" fill="#FFFFFF" opacity="0.6"/>
+        
+        <path d="M 85 135 C 95 145, 105 145, 115 135" fill="none" stroke="#3e1c02" stroke-width="3.5" stroke-linecap="round"/>
+        
+        <circle cx="75" cy="125" r="9" fill="#e06666" opacity="0.7"/>
+        <circle cx="125" cy="125" r="9" fill="#e06666" opacity="0.7"/>
     </svg>
 </div>
 </body>
