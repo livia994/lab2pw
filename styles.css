@@ -334,6 +334,64 @@ footer {
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
 
+.mascot-svg {
+    animation: bounce 2s infinite alternate, rotate 10s infinite linear;
+}
+
+.mascot-message {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.mascot-message:after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    margin-top: -10px;
+    border-width: 10px 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+.cookie-mascot:hover .mascot-message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -408,6 +466,12 @@ footer {
         width: 60px;
         height: 60px;
     }
+    
+    .mascot-message {
+        max-width: 150px;
+        font-size: 0.9rem;
+    }
+    
 }
 
 @media (max-width: 480px) {
