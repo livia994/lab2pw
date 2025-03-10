@@ -12,6 +12,22 @@ A responsive and visually appealing landing page designed for "Sweet Delights Co
 - Mobile-friendly toggle menu to conveniently hide navigation options on smaller screens
 - Quick order selection button, exclusive to mobile screens, for faster and more accessible purchases
 
+## Frameworks 
+
+I have chosen to optimize and improve the process of styling of 2 sections of my landing page (Hero and Products Sections) by using Tailwind CSS framework.
+
+For the Hero section:
+
+- Used Tailwind utilities for layout, background, and text styles
+- Improved responsiveness with flexbox and padding adjustments
+- Added hover effects for the call-to-action button
+
+For the Products section:
+
+- Used Tailwind grid and flex utilities for product layout
+- Applied hover effects and transitions
+- Adjusted spacing and text styling to improve the design
+
 ## Live Demo
 
 https://youtu.be/vdWgj-Vu82E
